@@ -10,9 +10,13 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: install dependencies
+      env:
+        QT_INSTALL_DIR: ~/Qt
+        PATH: ${QT_INSTALL_DIR}/Qt Creator.app/Contents/MacOS:${PATH}
       run: |
-        brew install qbs
+        brew install qt
         brew link qt5 --force
+        ./dist/install-qt.sh -d ${QT_INSTALL_DIR} --version 4.10.1 qtcreator
     - name: setup qbs
       run: |
         qbs setup-toolchains --detect
