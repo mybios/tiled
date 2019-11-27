@@ -19,8 +19,13 @@ QtGuiApplication {
 
     cpp.includePaths: [
                 ".",
-                "../../zstd/lib"
+                "../../zstd/lib",
+                "../../sentry-native/include"
             ]
+    cpp.libraryPaths: [
+        "../../sentry-native/gen_linux/bin/Release"
+    ]
+    cpp.staticLibraries: ["sentry_crashpad"]
 
     cpp.useRPaths: project.useRPaths
     cpp.rpaths: {
