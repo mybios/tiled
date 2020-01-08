@@ -96,3 +96,4 @@ By default, Tiled and its plugins are compiled with an Rpath that allows them
 to find the shared *libtiled* library immediately after being compiled. When
 packaging Tiled for distribution, the Rpath should be disabled by appending
 `projects.Tiled.useRPaths:false` to the qbs command.
+
